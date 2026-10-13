@@ -1,0 +1,75 @@
+{
+  "source": {
+    "target": "CHEMBL240",
+    "pref_name": "Voltage-gated inwardly rectifying potassium channel KCNH2",
+    "organism": "Homo sapiens",
+    "chembl_version": "ChEMBL_37",
+    "n_activities": 19130,
+    "downloaded": "2026-10-13"
+  },
+  "n_raw": 19130,
+  "filters": [
+    {
+      "step": "exact '=' relation",
+      "kept": 12021,
+      "dropped": 7109
+    },
+    {
+      "step": "units nM, value > 0",
+      "kept": 12010,
+      "dropped": 11
+    },
+    {
+      "step": "has SMILES",
+      "kept": 12008,
+      "dropped": 2
+    },
+    {
+      "step": "wild-type channel (no assay_variant_mutation)",
+      "kept": 11985,
+      "dropped": 23
+    },
+    {
+      "step": "no ChEMBL validity flag",
+      "kept": 11694,
+      "dropped": 291
+    },
+    {
+      "step": "2 < pIC50 < 12",
+      "kept": 11694,
+      "dropped": 0
+    }
+  ],
+  "n_standardisation_failed": 0,
+  "n_measurements": 11694,
+  "replicates": {
+    "n_compounds": 1172,
+    "median_sd": 0.0,
+    "p75_sd": 0.214,
+    "p90_sd": 0.636
+  },
+  "n_unique_compounds": 9586,
+  "n_at_exactly_10uM": 185,
+  "label": {
+    "threshold_pIC50": 5.0,
+    "band": 0.3,
+    "n_ambiguous": 3208,
+    "n_labelled": 6378,
+    "n_blocker": 4646,
+    "n_non_blocker": 1732,
+    "n_scaffolds": 3470,
+    "rationale": "pIC50 5 (10 uM) is the common early-discovery hERG flag. The +/-0.3 band exceeds the p75 replicate SD, so a compound inside it could land on either side on re-measurement."
+  },
+  "features": {
+    "shape": [
+      6378,
+      2051
+    ],
+    "morgan": "radius 2, 2048 bits",
+    "descriptors": [
+      "MW",
+      "logP",
+      "TPSA"
+    ]
+  }
+}

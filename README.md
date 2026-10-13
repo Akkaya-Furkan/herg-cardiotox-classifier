@@ -20,5 +20,13 @@ Clean dataset, model, ROC/PR and SHAP figures, write-up.
 - ChEMBL assays are heterogeneous (cell lines, protocols); label noise caps performance.
 - Random splits overstate performance; the scaffold split is the headline number.
 
+## Reproduce
+```bash
+python scripts/01_fetch_chembl.py   # all ChEMBL IC50 records for CHEMBL240, checkpointed and resumable
+python scripts/02_prepare.py        # standardise, de-duplicate, label, featurise
+```
+Every filtering step and its counts are in `data/processed/summary.json`.
+
 ## Status
-Planned — part of a 30-project computational biology and scientific software portfolio.
+Day 1 done (ChEMBL 37, 19,130 IC50 records -> 9,586 unique compounds -> 6,378 labelled: 4,646 blockers, 1,732 non-blockers, 3,470 scaffolds). Modelling next.
+Part of a 30-project computational biology and scientific software portfolio.
