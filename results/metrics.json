@@ -1,0 +1,169 @@
+{
+  "n": 6378,
+  "positive_fraction": 0.7284,
+  "splits": {
+    "scaffold": {
+      "train": 5103,
+      "test": 1275,
+      "test_positive_fraction": 0.7506,
+      "scaffolds_shared_train_test": 0
+    },
+    "random": {
+      "train": 5103,
+      "test": 1275,
+      "test_positive_fraction": 0.7341,
+      "scaffolds_shared_train_test": 468
+    }
+  },
+  "results": {
+    "scaffold/RandomForest": {
+      "cv_mean": {
+        "ROC_AUC": 0.8689,
+        "PR_AUC": 0.9427,
+        "MCC": 0.4893,
+        "Brier": 0.1304
+      },
+      "cv_sd": {
+        "ROC_AUC": 0.022,
+        "PR_AUC": 0.0114,
+        "MCC": 0.0256,
+        "Brier": 0.0042
+      },
+      "test": {
+        "ROC_AUC": 0.8889,
+        "PR_AUC": 0.9551,
+        "MCC": 0.5389,
+        "Brier": 0.1172
+      }
+    },
+    "scaffold/LightGBM": {
+      "cv_mean": {
+        "ROC_AUC": 0.8573,
+        "PR_AUC": 0.9347,
+        "MCC": 0.507,
+        "Brier": 0.132
+      },
+      "cv_sd": {
+        "ROC_AUC": 0.021,
+        "PR_AUC": 0.0134,
+        "MCC": 0.0276,
+        "Brier": 0.0056
+      },
+      "test": {
+        "ROC_AUC": 0.8828,
+        "PR_AUC": 0.9549,
+        "MCC": 0.5411,
+        "Brier": 0.1145
+      }
+    },
+    "random/RandomForest": {
+      "cv_mean": {
+        "ROC_AUC": 0.9081,
+        "PR_AUC": 0.9616,
+        "MCC": 0.5664,
+        "Brier": 0.11
+      },
+      "cv_sd": {
+        "ROC_AUC": 0.0111,
+        "PR_AUC": 0.0062,
+        "MCC": 0.0409,
+        "Brier": 0.0068
+      },
+      "test": {
+        "ROC_AUC": 0.9234,
+        "PR_AUC": 0.9685,
+        "MCC": 0.6409,
+        "Brier": 0.0982
+      }
+    },
+    "random/LightGBM": {
+      "cv_mean": {
+        "ROC_AUC": 0.8963,
+        "PR_AUC": 0.9548,
+        "MCC": 0.6011,
+        "Brier": 0.1107
+      },
+      "cv_sd": {
+        "ROC_AUC": 0.0122,
+        "PR_AUC": 0.0069,
+        "MCC": 0.0303,
+        "Brier": 0.0097
+      },
+      "test": {
+        "ROC_AUC": 0.917,
+        "PR_AUC": 0.9645,
+        "MCC": 0.6433,
+        "Brier": 0.0963
+      }
+    }
+  },
+  "applicability_domain": [
+    {
+      "nn_tanimoto": "0.0-0.4",
+      "n": 182,
+      "ROC_AUC": 0.7779
+    },
+    {
+      "nn_tanimoto": "0.4-0.5",
+      "n": 80,
+      "ROC_AUC": 0.8124
+    },
+    {
+      "nn_tanimoto": "0.5-0.6",
+      "n": 157,
+      "ROC_AUC": 0.8137
+    },
+    {
+      "nn_tanimoto": "0.6-0.7",
+      "n": 312,
+      "ROC_AUC": 0.9164
+    },
+    {
+      "nn_tanimoto": "0.7-1.0",
+      "n": 544,
+      "ROC_AUC": 0.9201
+    }
+  ],
+  "test_nn_tanimoto_median": 0.6769,
+  "band_sensitivity": [
+    {
+      "band": 0.0,
+      "n": 9586,
+      "positive_fraction": 0.6779,
+      "ROC_AUC": 0.8004,
+      "PR_AUC": 0.8943,
+      "MCC": 0.4112,
+      "Brier": 0.1649
+    },
+    {
+      "band": 0.3,
+      "n": 6378,
+      "positive_fraction": 0.7284,
+      "ROC_AUC": 0.8828,
+      "PR_AUC": 0.9549,
+      "MCC": 0.5411,
+      "Brier": 0.1145
+    },
+    {
+      "band": 0.5,
+      "n": 4468,
+      "positive_fraction": 0.8109,
+      "ROC_AUC": 0.9065,
+      "PR_AUC": 0.9731,
+      "MCC": 0.471,
+      "Brier": 0.1108
+    }
+  ],
+  "shap_top10": [
+    "logP (0.484)",
+    "TPSA (0.478)",
+    "MW (0.224)",
+    "bit_1791 (0.131)",
+    "bit_650 (0.119)",
+    "bit_1917 (0.117)",
+    "bit_807 (0.101)",
+    "bit_283 (0.070)",
+    "bit_1243 (0.067)",
+    "bit_653 (0.062)"
+  ]
+}
